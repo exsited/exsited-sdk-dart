@@ -1,0 +1,30 @@
+name: exsited
+description: >-
+  Dart SDK for the Exsited v4 REST API: every endpoint as a function, JSON in
+  and JSON out.
+# Duplicated, by necessity, at Sdk.version in lib/src/config/sdk_config.dart, which
+# is the value the User-Agent reports: Dart cannot read this file at run time.
+version: 4.0.0
+repository: https://github.com/exsited/exsited-sdk-dart
+
+# Async throughout (Future / Stream). Cross-platform: package:http runs on the
+# VM, Flutter and web, with conditional imports selecting the dart:io pieces
+# where they exist.
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  http: ^1.6.0
+  # Direct: the transport parses a files entry's contentType element into the
+  # MediaType a multipart part carries. Already transitive via http.
+  http_parser: ^4.1.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  # Read by test/auth/auth.dart only, to load the repo's own .env. A dev
+  # dependency: the SDK itself never reads a credential from the environment.
+  dotenv: ^4.2.0
+  # Runs the live suite. The sequential and live-safety settings are in
+  # `dart_test.yaml`.
+  test: ^1.31.0

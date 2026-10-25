@@ -1,0 +1,13 @@
+# Normalise line endings in the repository to LF, whatever the checkout does
+# locally, so a file does not read as wholly rewritten depending on which
+# platform touched it last.
+* text=auto eol=lf
+
+# Binary, so never touched.
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.jar binary

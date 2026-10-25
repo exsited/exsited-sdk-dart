@@ -1,0 +1,26 @@
+# Strict analysis is the phase gate: `dart analyze` must report 0 issues.
+include: package:lints/recommended.yaml
+
+analyzer:
+  # /scratchpad/ is gitignored (see .gitignore): local probes, not part of the
+  # deliverable, and analysing them would report issues no clone of this repo has.
+  # /bin/dart-sdk/ is where a Dart SDK unpacked for local use lands (also
+  # gitignored); its sources are not this package's code.
+  exclude:
+    - scratchpad/**
+    - bin/dart-sdk/**
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+linter:
+  # public_member_api_docs is not enabled: a member whose name and signature say
+  # everything does not carry a doc comment.
+  rules:
+    - prefer_final_locals
+    - prefer_final_in_for_each
+    - avoid_dynamic_calls
+    - unnecessary_lambdas
+    - prefer_single_quotes
+    - directives_ordering

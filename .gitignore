@@ -1,0 +1,38 @@
+# Dart / pub
+.dart_tool/
+.packages
+build/
+doc/api/
+# Library package: the lockfile is not committed (only apps pin it).
+pubspec.lock
+
+# Local working area: parked artifacts, one-off drivers, notes.
+/scratchpad/
+
+# Credentials for live verification. Never committed.
+.env
+.env.*
+!.env.example
+
+# Captured live responses: some carry email, address and phone fields belonging
+# to real people.
+captures/
+sweep_result.json
+
+# A token cache pointed at the repository holds a live access token and
+# refresh token.
+token.json
+*_token.json
+
+# A Dart SDK unpacked here for local use.
+/bin/dart-sdk/
+
+# OS / IDE
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Log files a probe or a driver may leave behind.
+*.log
